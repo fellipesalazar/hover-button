@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1c1c1c;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    margin-top: 30px;
+    border-radius: 70px;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.left {
+    box-shadow: 0 0 0 3px inset dodgerblue;
+}
+
+a.right {
+    box-shadow: 0 0 0 3px inset orangered;
+}
+
+a.top {
+    box-shadow: 0 0 0 3px inset forestgreen;
+}
+
+a.bottom {
+    box-shadow: 0 0 0 3px inset red;
+}
+
+a.center {
+    box-shadow: 0 0 0 3px inset goldenrod;
+}
+
+.slide-effect a:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+    transition: transform .5s;
+}
+
+a.left:before {
+    transform: scaleX(0);
+    transform-origin: right;
+    background: dodgerblue;
+}
+
+.slide-effect a.left:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+a.right:before {
+    transform: scaleX(0);
+    transform-origin: left;
+    background: orangered;
+}
+
+.slide-effect a.right:hover:before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+a.top:before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    background: forestgreen;
+}
+
+.slide-effect a.top:hover:before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+a.bottom:before {
+    transform: scaleY(0);
+    transform-origin: top;
+    background: red;
+}
+
+.slide-effect a.bottom:hover:before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+a.center:before {
+    transform: scaleX(0);
+    transform-origin: center;
+    background: goldenrod;
+}
+
+.slide-effect a.center:hover:before {
+    transform: scaleX(1);
+}
